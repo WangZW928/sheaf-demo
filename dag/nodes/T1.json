@@ -13,6 +13,13 @@
   "module": "Demo.Targets.T1",
   "declaration": "Demo.T1",
   "lean_statement": "theorem Demo.T1 (n : Nat) : n + 0 = n",
+  "lean_proof": {
+    "body": "by rfl",
+    "method": "Definitional reduction of Nat.add at zero followed by equality reflexivity.",
+    "theorem_dependencies": [],
+    "explicit_imports": [],
+    "note": "The actual proof does not invoke Nat.add_zero or any auxiliary theorem; proof_deps remains empty."
+  },
   "proof_origin": {
     "kind": "agent-written",
     "author": "G1 worker",

@@ -3,3 +3,5 @@
 2026-10-22T07:44:46Z G1 done T1 (sorry left: None) Stage 2 reviewed and landed; maintainer repaired interface classification; green d1c3573371 actually compiled and published T1.
 2026-10-22T07:46:00Z M landed Demo Demo.Basic (interface, landing 20261022T074600-M-255489)
 2026-10-22T07:48:22Z M landed Challenge TargetsCheck (interface, landing 20261022T074821-M-256736)
+2026-10-22T07:49:12Z G2 done T2 (sorry left: None) Stage 1 lead reviewed: exact Nat.zero_add match, complete induction and edge cases; no auxiliary nodes; stage 2 ready.
+2026-10-22T07:50:22Z G1 landed Demo.Targets.T1 (proof, landing 20261022T075022-G1-257873)

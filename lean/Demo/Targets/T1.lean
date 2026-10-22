@@ -13,4 +13,4 @@ its second argument, with the zero branch returning its first argument. Thus
 `n = 0` and every successor without additional hypotheses.
 -/
 theorem Demo.T1 (n : Nat) : n + 0 = n := by
-  sorry
+  rfl
