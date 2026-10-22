@@ -14,3 +14,4 @@
 | 2026-10-22T07:48:57.860421+00:00 | GREEN; full Challenge and initial TargetsCheck compiled/published; stage 3 open for T1 | — | No new proof dependencies to import; two-node DAG unchanged | No remote; built `a731f370f24b392d2fde20f82a8f2098ba13883c` |
 | 2026-10-22T07:51:17.628437+00:00 | GREEN; G1 T1 proof landing verified | — | No new imports or DAG dependencies; final all-target checks pending | No remote; built `11207013530e99e159fb51bd5a297c852566f52d` |
 | 2026-10-22T07:52:45.120751+00:00 | GREEN; G2 T2 statement interface landing verified | — | No proof dependency imports needed; source/decl metadata agree | No remote; built `48804c925daf31335653f396b84584ce99b5f705` |
+| 2026-10-22T07:53:24.001943+00:00 | GREEN; both target modules now reached by Demo and TargetsCheck | — | M import landing verified; T2 opened in proof queue | No remote; built `faa7f7044bb6597693998c9c9ffa5c7a8e91a570` |
