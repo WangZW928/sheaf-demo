@@ -7,6 +7,7 @@ The current state of the run. Only the launcher and the maintainer write here, e
 Written by the launcher at the start (`1-dag`), then kept current by the maintainer: every stage that has open or waiting items, since the stages overlap (`roles/maintainer.md` §6).
 
 1-dag
+2-statements
 
 ## Plan
 

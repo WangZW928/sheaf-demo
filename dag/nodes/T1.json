@@ -7,9 +7,55 @@
     "document": "GOAL.md",
     "place": "target table, T1"
   },
-  "status": "unsplit",
+  "status": "split",
   "stmt_deps": [],
   "proof_deps": [],
-  "proof": [],
-  "mathlib_searches": []
+  "proof_origin": {
+    "kind": "agent-written",
+    "author": "G1 worker",
+    "note": "No paper or external proof source exists for this demonstration; GOAL.md fixes the target. The proof below spells out the defining equation also used by the local core theorem."
+  },
+  "proof": [
+    {
+      "step": 1,
+      "text": "Fix an arbitrary natural number n. Natural-number addition recurses on its second argument, with defining equation n + 0 = n. Therefore n + 0 reduces to n and the desired equality is reflexivity. Since n was arbitrary, the conclusion holds for every natural number.",
+      "uses": [],
+      "elementary": true
+    }
+  ],
+  "edge_cases": [
+    "n = 0: 0 + 0 reduces to 0, so the equation is 0 = 0.",
+    "n = 1: 1 + 0 reduces to 1. The same defining equation applies to any successor and imposes no positivity or upper-bound hypothesis."
+  ],
+  "mathlib_searches": [
+    {
+      "date": "2026-10-22",
+      "tool": "rg",
+      "scope": "dag/nodes, lean/Demo.lean, lean/Demo",
+      "query": "T1|add_zero|n \\+ 0|zero_add|0 \\+ n",
+      "results": "Only T1 states right-zero addition; T2 is the distinct left-zero target. No existing project-library declaration matches T1."
+    },
+    {
+      "date": "2026-10-22",
+      "tool": "rg",
+      "scope": "lean/.lake/packages/mathlib/Mathlib (pinned v4.35.0)",
+      "query": "Nat.add_zero|theorem add_zero|protected.*add_zero|n \\+ 0 = n",
+      "results": "Mathlib/Algebra/Group/Nat/Defs.lean:35 sets the natural-number additive identity field to Nat.add_zero; other matches concern different types or use this theorem."
+    },
+    {
+      "date": "2026-10-22",
+      "tool": "lean --print-prefix via environments/windows/run.sh; rg and source inspection",
+      "scope": "Lean v4.35.0 local toolchain src/lean/Init",
+      "query": "theorem.*Nat.add_zero|theorem.* add_zero|add_zero.*rfl; Nat.add",
+      "results": "Init/Core.lean:747 declares Nat.add_zero (n : Nat) : n + 0 = n with reflexivity proof. Init/Prelude.lean:1888-1890 defines Nat.add with zero branch returning its first argument."
+    }
+  ],
+  "mathlib_match": {
+    "declaration": "Nat.add_zero",
+    "statement": "(n : Nat) : n + 0 = n",
+    "match": "exact, after universally quantifying n",
+    "source": "Lean v4.35.0, Init/Core.lean:747 (core theorem available to Mathlib)",
+    "mathlib_use": "Mathlib/Algebra/Group/Nat/Defs.lean:35",
+    "note": "Keep target status split so stage 2 creates the project's target declaration; no auxiliary mathematical node is required."
+  }
 }
