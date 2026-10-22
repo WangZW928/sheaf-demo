@@ -4,6 +4,7 @@ defaultTargets = ["Demo"]
 
 [[lean_lib]]
 name = "Demo"
+globs = ["Demo", "Demo.+"]
 
 [[require]]
 name = "mathlib"
