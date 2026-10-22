@@ -1,3 +1,1 @@
 # item	stage	distance (to a target; to Mathlib in stage 2)	sorry	kind
-T2	2	1		state
-Demo.Targets.T1	3	0	1	proof

@@ -12,3 +12,4 @@
 | 2026-10-22T07:46:25.772324+00:00 | GREEN; M root set verified, unused generated Demo.Basic removed | — | Root now imports arithmetic target T1; no proof dependencies added | No remote; built `e4152dcf0a424e6243af31fe8c943c7047349de0` |
 | 2026-10-22T07:48:45.505501+00:00 | Full two-target Challenge and initial TargetsCheck landed by M | — | Added both check roots to default Lake build; expose T1 proof while T2 statement delivery continues; all-target acceptance remains pending | No remote |
 | 2026-10-22T07:48:57.860421+00:00 | GREEN; full Challenge and initial TargetsCheck compiled/published; stage 3 open for T1 | — | No new proof dependencies to import; two-node DAG unchanged | No remote; built `a731f370f24b392d2fde20f82a8f2098ba13883c` |
+| 2026-10-22T07:51:17.628437+00:00 | GREEN; G1 T1 proof landing verified | — | No new imports or DAG dependencies; final all-target checks pending | No remote; built `11207013530e99e159fb51bd5a297c852566f52d` |
