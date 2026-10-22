@@ -13,6 +13,13 @@
   "module": "Demo.Targets.T2",
   "declaration": "Demo.T2",
   "lean_statement": "theorem Demo.T2 (n : Nat) : 0 + n = n",
+  "lean_proof": {
+    "method": "exact Nat.zero_add n",
+    "declarations_used": ["Nat.zero_add"],
+    "project_node_dependencies": [],
+    "imports": [],
+    "note": "The formal proof applies the exact core theorem recorded in mathlib_match, available through implicit Init. The elementary induction below explains that theorem; no auxiliary project node is required."
+  },
   "proof_origin": {
     "kind": "agent-written",
     "author": "G2 worker",
@@ -77,6 +84,6 @@
     "match": "exact",
     "source": "Lean v4.35.0, Init/Data/Nat/Basic.lean:135-137 (core theorem available to Mathlib)",
     "mathlib_use": "Mathlib/Algebra/Group/Nat/Defs.lean:34",
-    "note": "Keep target status split so stage 2 creates Demo.T2 in module Demo.Targets.T2; no auxiliary mathematical node is required."
+    "note": "Demo.T2 in module Demo.Targets.T2 applies this exact core theorem directly; no auxiliary mathematical node is required."
   }
 }

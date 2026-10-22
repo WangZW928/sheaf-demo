@@ -24,4 +24,4 @@ proves the successor case. Induction establishes the statement for every
 natural number, including zero, with no positivity or upper-bound assumption.
 -/
 theorem Demo.T2 (n : Nat) : 0 + n = n := by
-  sorry
+  exact Nat.zero_add n
