@@ -55,6 +55,8 @@ Group `M` may also land the maintainer-owned roots `Challenge.lean` and `Targets
 | `landing.py status / mine <group> / revert <id> <reason>` | The landings that are being checked or wait for the global build, and the last build's result; a group's open and reverted landings; `revert` is the maintainer's. |
 | `build.py [--retry]` | The global build, for the maintainer (§ The global build). When nothing has landed it waits for the next landing, and builds as soon as it arrives. After a red build, `--retry` builds the same snapshot again with the maintainer's own landings and without the landings it reverted, and nothing else. |
 
+New declarations and added imports are interface changes: new modules compile in place and their landing requests trigger the normal interface-build rule. Proof-body-only edits remain proof landings.
+
 A single-file compile of a module cannot show its effect on other modules, because they still load its old `.olean`. That is why landing runs `import_prune_check.py`, and why every landing is verified afterwards by the global build. The check reads source text: it does not see a removed import that only provided an instance, which the build shows.
 
 ## Planning a change

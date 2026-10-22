@@ -262,16 +262,14 @@ def interface(text: str) -> dict[str, str]:
 
 
 def interface_changes(old: str, new: str) -> list[str]:
-    """What a change to a module changes for the modules importing it; empty when only proofs changed or plain
-    declarations were added. Listed: a declaration removed or changed in what `interface` records, a declaration
+    """What a change to a module changes for the modules importing it; empty when only proofs changed. Listed: a declaration removed or changed in what `interface` records, a declaration
     added with an attribute or as an instance (it changes elaboration downstream), a removed import, and a change
     in the other commands."""
     a, b = interface(old), interface(new)
     out = [k for k in a if not k.startswith("#") and (k not in b or a[k] != b[k])]
-    out += [k for k in b if not k.startswith("#") and k not in a
-            and (b[k].split(" | ")[0].strip() or b[k].split(" | ")[1].startswith("instance"))]
-    if set(a["#imports"].split()) - set(b["#imports"].split()):
-        out.append("(imports removed)")
+    out += [k for k in b if not k.startswith("#") and k not in a]
+    if a["#imports"] != b["#imports"]:
+        out.append("(imports changed)")
     if a["#commands"] != b["#commands"]:
         out.append("(commands such as variable, open, notation or attribute)")
     return out

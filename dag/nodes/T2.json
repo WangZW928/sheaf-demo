@@ -7,9 +7,73 @@
     "document": "GOAL.md",
     "place": "target table, T2"
   },
-  "status": "unsplit",
+  "status": "split",
   "stmt_deps": [],
   "proof_deps": [],
-  "proof": [],
-  "mathlib_searches": []
+  "proof_origin": {
+    "kind": "agent-written",
+    "author": "G2 worker",
+    "note": "No paper or external proof source exists for this demonstration; GOAL.md fixes the target. The elementary induction below spells out the same recursion found in the local core theorem, inspected as search evidence."
+  },
+  "proof": [
+    {
+      "step": 1,
+      "text": "Use induction on the arbitrary natural number n. Natural-number addition recurses on its second argument: a + 0 = a and a + succ b = succ (a + b). These defining equations and natural-number induction suffice.",
+      "uses": [],
+      "elementary": true
+    },
+    {
+      "step": 2,
+      "text": "For n = 0, the expression 0 + 0 reduces to 0 by the zero defining equation, so the required equality is reflexivity.",
+      "uses": [],
+      "elementary": true
+    },
+    {
+      "step": 3,
+      "text": "For the successor case, assume 0 + k = k. By the successor defining equation, 0 + succ k = succ (0 + k). Applying succ to the induction hypothesis gives succ (0 + k) = succ k. Combining these equalities proves 0 + succ k = succ k.",
+      "uses": [],
+      "elementary": true
+    },
+    {
+      "step": 4,
+      "text": "The base and successor cases establish 0 + n = n for every natural number n, with no additional hypothesis.",
+      "uses": [],
+      "elementary": true
+    }
+  ],
+  "edge_cases": [
+    "n = 0: 0 + 0 reduces to 0; no positivity hypothesis is required.",
+    "n = 1: 0 + succ 0 reduces to succ (0 + 0), hence to succ 0 = 1. The induction step covers every successor and imposes no upper bound."
+  ],
+  "mathlib_searches": [
+    {
+      "date": "2026-10-22",
+      "tool": "rg",
+      "scope": "dag/nodes, lean/Demo.lean, lean/Demo",
+      "query": "zero_add|0 \\+ n|T2|Nat",
+      "results": "T2 alone states left-zero addition; T1 is the distinct right-zero target. The project library contains only its initial Demo.Basic placeholder, with no matching arithmetic declaration."
+    },
+    {
+      "date": "2026-10-22",
+      "tool": "rg; git rev-parse HEAD",
+      "scope": "lean/.lake/packages/mathlib/Mathlib/Data/Nat and Mathlib/Algebra/Group/Nat, pinned revision 56a005855ea17e0b0958f73ec801ae140b0a1679",
+      "query": "Nat.zero_add|theorem zero_add|zero_add.*Nat|0 \\+ n = n",
+      "results": "Mathlib/Algebra/Group/Nat/Defs.lean:34 sets the natural-number additive identity field to Nat.zero_add. Mathlib/Data/Nat/{Size,BinaryRec,Digits/Defs,Cast/Defs,Factorial/Basic,Choose/Basic}.lean also use Nat.zero_add; no replacement theorem or project-specific hypothesis is needed. The checked-out Mathlib HEAD equals the pinned revision."
+    },
+    {
+      "date": "2026-10-22",
+      "tool": "rg and local source inspection",
+      "scope": "Lean v4.35.0 local toolchain src/lean/Init",
+      "query": "theorem.*zero_add|protected def Nat.add|theorem.*add_succ",
+      "results": "Init/Data/Nat/Basic.lean:135-137 declares @[simp] protected theorem Nat.zero_add : ∀ (n : Nat), 0 + n = n. Its zero case is reflexivity and its successor case applies congrArg succ to the recursive proof. Init/Prelude.lean:1888-1890 defines Nat.add by recursion on the second argument; Init/Data/Nat/Basic.lean:146-147 states the successor equation by reflexivity."
+    }
+  ],
+  "mathlib_match": {
+    "declaration": "Nat.zero_add",
+    "statement": "∀ (n : Nat), 0 + n = n",
+    "match": "exact",
+    "source": "Lean v4.35.0, Init/Data/Nat/Basic.lean:135-137 (core theorem available to Mathlib)",
+    "mathlib_use": "Mathlib/Algebra/Group/Nat/Defs.lean:34",
+    "note": "Keep target status split so stage 2 creates Demo.T2 in module Demo.Targets.T2; no auxiliary mathematical node is required."
+  }
 }

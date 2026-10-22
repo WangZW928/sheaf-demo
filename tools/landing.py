@@ -147,8 +147,10 @@ def finish(rid: str, is_set: bool) -> int:
             f["deleted"] = f["existed"] and not dst.is_file()
             if f["deleted"]:
                 changed.append(f"{f['module']} (deleted)")
-            elif f["existed"]:
-                changed += li.interface_changes(bk.read_text(errors="ignore"), dst.read_text(errors="ignore"))
+            else:
+                old = bk.read_text(errors="ignore") if f["existed"] else ""
+                new = dst.read_text(errors="ignore") if dst.is_file() else ""
+                changed += li.interface_changes(old, new)
         r.update(kind="interface" if (is_set or changed) else "proof", set=is_set, changed=changed[:40], landed=now())
         write_json(REQUESTS / f"{rid}.json", r)
         (INFLIGHT / f"{rid}.json").unlink()
