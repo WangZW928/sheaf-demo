@@ -10,3 +10,4 @@
 2026-10-22T07:52:07Z G2 done T2 (sorry left: None) Stage 2 lead reviewed and landed Demo.Targets.T2 as interface 20261022T075146-G2-258363; exact statement, no explicit imports, named theorem placeholder with full source/proof docstrings; awaiting global verification.
 2026-10-22T07:52:48Z M landed Demo TargetsCheck (interface, landing 20261022T075247-M-258909)
 2026-10-22T07:55:54Z G2 landed Demo.Targets.T2 (proof, landing 20261022T075554-G2-259956)
+2026-10-22T07:56:42Z G2 done Demo.Targets.T2 (sorry left: 0) Stage 3 lead reviewed and landed 20261022T075554-G2-259956: exact Nat.zero_add n; statement unchanged; no explicit imports or sorry; sandbox axioms empty; awaiting global verification.
