@@ -47,5 +47,12 @@ Reviewed Challenge SHA-256:
 `67216150f0aa4071ec4dd1d927a05efeff7e96db500d0fca4e81b3a9e1f5267f`.
 Changing only the target implementations' proofs does not change this
 review. Changes to the statement or its referenced definitions require a
-new review. The maintainer must also check the implementation's elaborated
-type against this locked statement when T2 lands.
+new review.
+
+The subsequently landed [T2 implementation](../lean/Demo/Targets/T2.lean)
+was inspected at green commit
+`48804c925daf31335653f396b84584ce99b5f705`: it has exactly the same theorem
+header, no explicit imports and no preceding definitions, variables,
+notations or instances. Its stage 2 proof is still a named placeholder;
+replacing that proof preserves this semantic review. The maintainer's
+elaborated-type comparison must also pass before final acceptance.
