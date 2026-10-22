@@ -1,1 +1,2 @@
 2026-10-22T07:41:25Z G1 done T1 (sorry left: None) Stage 1 reviewed: complete elementary proof, exact Nat.add_zero match, edge cases and searches recorded; ready for stage 2.
+2026-10-22T07:42:47Z G1 landed Demo.Targets.T1 (proof, landing 20261022T074247-G1-253917)

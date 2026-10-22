@@ -18,6 +18,10 @@ source "$(dirname "$0")/sheaf_env.sh"
 SRC=$(realpath "${1:?usage: land.sh <sandbox file> <library file>}"); DST=$(realpath -m "${2:?usage: land.sh <sandbox file> <library file>}")
 case "$SRC" in "$SHEAF_LEAN/.sandbox/$SHEAF_GROUP/"*) ;; *) echo "The sandbox file must be under lean/.sandbox/$SHEAF_GROUP/"; exit 2;; esac
 ok=0; for d in $SHEAF_LIB; do case "$DST" in "$SHEAF_LEAN/$d/"*|"$SHEAF_LEAN/$d.lean") ok=1;; esac; done
+# These two isolated roots are owned by the maintainer, outside SHEAF_LIB.
+if [ "$SHEAF_GROUP" = M ]; then
+  case "$DST" in "$SHEAF_LEAN/Challenge.lean"|"$SHEAF_LEAN/TargetsCheck.lean") ok=1;; esac
+fi
 [ $ok = 1 ] || { echo "The target must be in the library ($SHEAF_LIB under lean/)"; exit 2; }
 REL=${DST#"$SHEAF_LEAN/"}; MOD=${REL%.lean}; MOD=${MOD//\//.}
 T="$(dirname "$0")"

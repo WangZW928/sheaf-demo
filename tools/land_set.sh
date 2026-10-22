@@ -23,6 +23,9 @@ mapfile -t FILES < <(cd "$SET" && find . -name '*.lean' -type f | sed 's#^\./##'
 [ ${#FILES[@]} -gt 0 ] || { echo "No .lean files in $SET"; exit 2; }
 for f in "${FILES[@]}"; do
   ok=0; for d in $SHEAF_LIB; do case "$f" in "$d"/*|"$d.lean") ok=1;; esac; done
+  if [ "$SHEAF_GROUP" = M ]; then
+    case "$f" in Challenge.lean|TargetsCheck.lean) ok=1;; esac
+  fi
   [ $ok = 1 ] || { echo "$f is not in the library ($SHEAF_LIB)"; exit 2; }
 done
 echo "${#FILES[@]} file(s) in the set"

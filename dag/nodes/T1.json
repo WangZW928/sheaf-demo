@@ -10,6 +10,9 @@
   "status": "split",
   "stmt_deps": [],
   "proof_deps": [],
+  "module": "Demo.Targets.T1",
+  "declaration": "Demo.T1",
+  "lean_statement": "theorem Demo.T1 (n : Nat) : n + 0 = n",
   "proof_origin": {
     "kind": "agent-written",
     "author": "G1 worker",

@@ -43,6 +43,8 @@ SHEAF_CLAIM_TTL=6             # hours after which an unrenewed claim may be take
 
 The scripts that compile and land take the name of the group from `SHEAF_GROUP`: call them as `SHEAF_GROUP=<group> tools/…`. The sandbox of a group is `lean/.sandbox/<group>/`.
 
+Group `M` may also land the maintainer-owned roots `Challenge.lean` and `TargetsCheck.lean`, individually or in a set. Other groups remain restricted to `SHEAF_LIB`. `Challenge` intentionally repeats the targets in an isolated environment, so its duplicate-name/statement checks are exempted; its import-cycle and downstream checks still run. Never import `Challenge` together with the target implementations.
+
 ## Compiling and landing
 
 | Tool | What it is for |

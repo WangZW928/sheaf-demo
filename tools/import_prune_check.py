@@ -92,6 +92,12 @@ def main() -> int:
         return 3
 
     latent = sorted((q, sorted(decls[q] - {mod})) for q in added_decls if decls.get(q, set()) - {mod})
+    # Challenge deliberately restates target names in an isolated environment.
+    # It still receives import-cycle and downstream checks, and must never be
+    # imported together with the target implementations.
+    if mod == "Challenge":
+        latent = []
+        new_stmts = {}
     if latent:
         print(f"{mod} declares names that other modules already declare:")
         for q, ms in latent:
