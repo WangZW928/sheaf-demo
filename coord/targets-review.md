@@ -7,7 +7,8 @@ _Independent reviews assembled by the maintainer, 2026-10-22._
 Both target statements are locked. The green build `faa7f7044b` contains
 both target declarations and both imports in `TargetsCheck.lean`.
 `tools/target_types.sh check` passed for both elaborated types. Proof
-acceptance is separate and remains subject to the final comparator run.
+acceptance is separately established by the successful final comparator run
+recorded in [validation.md](validation.md).
 
 | Target | Statement author | Independent reviewer | Status |
 | --- | --- | --- | --- |

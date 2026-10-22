@@ -1,0 +1,7 @@
+⚠ [3/9] Replayed Challenge
+warning: Challenge.lean:15:8: declaration uses `sorry`
+warning: Challenge.lean:25:8: declaration uses `sorry`
+✔ [5/9] Built Demo.Targets.T2 (148ms)
+✔ [6/9] Built Demo (150ms)
+✔ [8/9] Built TargetsCheck (150ms)
+Build completed successfully (9 jobs).

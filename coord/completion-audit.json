@@ -1,0 +1,37 @@
+{
+  "verified_commit": "4013a80166ab13db4093a6333f307265d6a4ad0e",
+  "comparator_exit_code": 0,
+  "challenge_sha256": "67216150f0aa4071ec4dd1d927a05efeff7e96db500d0fca4e81b3a9e1f5267f",
+  "targets": [
+    "Demo.T1",
+    "Demo.T2"
+  ],
+  "target_axioms": {
+    "Demo.T1": [],
+    "Demo.T2": []
+  },
+  "source_sha256": {
+    "Demo.lean": "4e5aaf50d7216c8ceef80b60debb0fcce131ff9dd3981a85b607381738a50608",
+    "Demo/Targets/T1.lean": "0b573275f02f308a8e9e2af52cb2c214665d862da9f080012023033578a10bb8",
+    "Demo/Targets/T2.lean": "c8c0665ce7ad1d7e613d83f995529f67ad7752b310d2c52c2f269c15bf5a5f8c",
+    "Challenge.lean": "67216150f0aa4071ec4dd1d927a05efeff7e96db500d0fca4e81b3a9e1f5267f",
+    "TargetsCheck.lean": "d5bdfd707fc1b96c1083dcf18cfb4935a2fc96e04eb93ae9d9c4fc202d328303",
+    "comparator.json": "9f5d3aca9589782ed6d4e950420793c3a3762d825851e41a27bb8d771936d5a4",
+    "lakefile.toml": "feb002671bb95d401e5ac0fbbc66d4d985c9667991cf6f06d2db5828dc1ab226",
+    "lake-manifest.json": "4b95e1e12411964bd2838dfda9fcbf212bb719f2e414311b451faa840a98dc77",
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+  },
+  "checks": [
+    "green full-library build and published artifacts",
+    "both fixed targets and exact comparator whitelist",
+    "sandboxed kernel comparator acceptance",
+    "same source bytes in commit, library and acceptance tree",
+    "independent reviews match current Challenge hash",
+    "complete acyclic DAG with both target declarations and proofs",
+    "empty queue and no outstanding claims or landings",
+    "zero sorry in target library; exactly two expected Challenge placeholders",
+    "no project definitions or axioms",
+    "pinned Lean and Mathlib",
+    "contract unchanged; no remote"
+  ]
+}

@@ -6,7 +6,9 @@ The current state of the run. Only the launcher and the maintainer write here, e
 
 Written by the launcher at the start (`1-dag`), then kept current by the maintainer: every stage that has open or waiting items, since the stages overlap (`roles/maintainer.md` §6).
 
-3-proving-and-pruning
+None. Project complete: both parts of `GOAL.md` hold for green library build
+`4013a80166ab13db4093a6333f307265d6a4ad0e`. The sandboxed comparator accepted both targets;
+independent statement reviews remain valid. See [validation.md](validation.md).
 
 ## Plan
 
