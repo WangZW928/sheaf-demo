@@ -1,0 +1,15 @@
+{
+  "id": "T1",
+  "kind": "target",
+  "target": true,
+  "statement": "对任意自然数 n，n + 0 = n",
+  "source": {
+    "document": "GOAL.md",
+    "place": "target table, T1"
+  },
+  "status": "unsplit",
+  "stmt_deps": [],
+  "proof_deps": [],
+  "proof": [],
+  "mathlib_searches": []
+}
