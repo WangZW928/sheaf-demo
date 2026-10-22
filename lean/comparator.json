@@ -1,0 +1,6 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "TargetsCheck",
+  "theorem_names": ["Demo.T1", "Demo.T2"],
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"]
+}
