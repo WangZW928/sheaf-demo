@@ -8,3 +8,4 @@
 2026-10-22T07:50:33Z G1 done Demo.Targets.T1 (sorry left: 0) Stage 3 reviewed, sandbox compiled, axiom-free rfl proof landed as 20261022T075022-G1-257873; awaiting global verification.
 2026-10-22T07:51:47Z G2 landed Demo.Targets.T2 (interface, landing 20261022T075146-G2-258363)
 2026-10-22T07:52:07Z G2 done T2 (sorry left: None) Stage 2 lead reviewed and landed Demo.Targets.T2 as interface 20261022T075146-G2-258363; exact statement, no explicit imports, named theorem placeholder with full source/proof docstrings; awaiting global verification.
+2026-10-22T07:52:48Z M landed Demo TargetsCheck (interface, landing 20261022T075247-M-258909)
